@@ -1,0 +1,23 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\begin{document}
+
+\begin{algorithm}
+\caption{K-Nearest Neighbor Classification (K-NNC)}
+\begin{algorithmic}[1]
+    \STATE \mbox{\textbf{Input:} Training dataset $D = \{(x_1, y_1), (x_2, y_2), \dots, (x_n, y_n)\}$}, test sample $x$, integer $K$
+    \STATE \textbf{Output:} Predicted label $y$ for test sample $x$
+    \FOR{each training sample $(x_i, y_i)$ in $D$}
+        \STATE Compute the Euclidean distance $d_i$ between $x$ and $x_i$
+    \ENDFOR
+    \STATE Sort all distances in ascending order
+    \STATE Select the $K$ training samples with the smallest distances
+    \STATE Count the frequency of each label among the $K$ neighbors
+    \STATE Assign the label with the highest frequency to $x$
+    \RETURN predicted label $y$
+\end{algorithmic}
+\end{algorithm}
+
+\end{document}
